@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1</title>
+</head>
+<body>
+    <!-- Estructura Semántica -->
+    <Header>
+        <h1>Portal de Noticias TI</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.google.com/" target="_blank">Inicio</a></li>
+                <li><a href="#">Reseña</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </Header>
+
+    <main>
+        <section>
+            <h2>Últimas Novedades</h2>
+
+            <article>
+                <Header>
+                    <h3>Lanzamiento de Nueva Tecnología</h3>
+                    <p>Publicado por <address>Juanito Dev</address></p>
+                </Header>
+
+                <p>Se especula mucho sobre nuevas APIs...</p>
+
+                <figure>
+                    <img src="https://placehold.co/200x100" alt="Gráfico de la noticia">
+                    <figcaption>Fig 1. Tendencias de Nueva Tecnología</figcaption>
+                </figure>
+
+                <blockquote>
+                    "La tecnología debe ser accesible para todos."
+                </blockquote>
+            </article>
+        </section>
+
+        <!-- Semántica a Nivel de Línea (o Texto) -->
+        <section>
+            <h2>Formatos de Texto</h2>
+
+            <p><strong><u>Atención:</u></strong> El evento comienza pronto.</p>
+
+            <p>No te quedes <em>afuera</em>.</p>
+
+            <p>El resultado de búsqueda para: <mark>HTML5</mark></p>
+
+            <p>La clase es el <time datetime="2025-11-20 09:00">20 de Noviembre a las 09:00</time></p>
+
+            <p><small>Sujeto a términos y condiciones.</small></p>
+
+            <pre>
+                <code>
+                    const saludar = () => {
+                        console.log("Hola Mundo!")
+                    }
+                </code>
+            </pre>
+        </section>
+
+        <aside>
+            <h3>Publicidad</h3>
+            <p>Compra nuestro curso de CSS.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Clase de Desarrollo Web</p>
+    </footer>
+
+</body>
+</html>

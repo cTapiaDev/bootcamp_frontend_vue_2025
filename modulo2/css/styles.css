@@ -1,3 +1,9 @@
+:root {
+    --bg-body: #0f172a;
+    --text-main: #d9e0e8;
+    --primary: #3659b9;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,5 +11,16 @@
 }
 
 body {
-    background-color: beige;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 16px;
+}
+
+body > header,
+body > main,
+body > footer {
+    max-width: 800px;
+    margin: 0 auto;
 }

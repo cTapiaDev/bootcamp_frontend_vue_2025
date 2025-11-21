@@ -1,7 +1,13 @@
 :root {
     --bg-body: #0f172a;
+    --bg-card: #212c3c;
     --text-main: #d9e0e8;
+    --text-muted: #8d9bae;
     --primary: #3659b9;
+    --accent: #24cb93;
+    --danger: #ef4444;
+
+    --radius: 8px;
 }
 
 * {
@@ -23,4 +29,150 @@ body > main,
 body > footer {
     max-width: 800px;
     margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    color: #fff;
+    margin: 0 0 1rem 0;
+    line-height: 1.2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+h2 {
+    border-bottom: 2px solid var(--primary);
+    padding: 0 0 0.5rem 0;
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: all 0.5s;
+}
+
+nav a:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+article {
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+article header p, time {
+    font-style: normal;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+article header p span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+}
+
+figure {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+blockquote {
+    background: rgba(55, 122, 238, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary);
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+pre {
+    line-height: 1.2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+caption {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+    color: var(--text-muted);
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+tbody th, 
+tbody td {
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background-color: var(--bg-body);
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Zebra striping */
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+tbody tr:hover {
+    background-color: rgba(59, 131, 246, 0.1);
 }

@@ -20,179 +20,183 @@
     </header>
 
     <main>
-        <section>
-            <h2>Últimas Novedades</h2>
+        <div>
+            <section>
+                <h2>Últimas Novedades</h2>
 
-            <article>
-                <header>
-                    <h3>Lanzamiento de Nueva Tecnología</h3>
-                    <p>Publicado por <span>Juanito Dev</span></p>
-                </header>
+                <article>
+                    <header>
+                        <h3>Lanzamiento de Nueva Tecnología</h3>
+                        <p>Publicado por <span>Juanito Dev</span></p>
+                    </header>
 
-                <p>Se especula mucho sobre nuevas APIs...</p>
+                    <p>Se especula mucho sobre nuevas APIs...</p>
 
-                <figure>
-                    <img src="https://placehold.co/200x100" alt="Gráfico de la noticia">
-                    <figcaption>Fig 1. Tendencias de Nueva Tecnología</figcaption>
-                </figure>
+                    <figure>
+                        <img src="https://placehold.co/200x100" alt="Gráfico de la noticia">
+                        <figcaption>Fig 1. Tendencias de Nueva Tecnología</figcaption>
+                    </figure>
+
+                    <blockquote>
+                        "La tecnología debe ser accesible para todos."
+                    </blockquote>
+                </article>
+            </section>
+
+            <!-- Semántica a Nivel de Línea (o Texto) -->
+            <section>
+                <h2>Formatos de Texto</h2>
+
+                <article>
+                    <p><strong><u>Atención:</u></strong> El evento comienza pronto.</p>
+
+                    <p>No te quedes <em>afuera</em>.</p>
+
+                    <p>El <span>resultado</span> de búsqueda para: <mark>HTML5</mark></p>
+
+                    <p>La clase es el <time datetime="2025-11-20 09:00">20 de Noviembre a las 09:00</time></p>
+
+                    <p><small>Sujeto a términos y condiciones.</small></p>
+                </article>
 
                 <blockquote>
-                    "La tecnología debe ser accesible para todos."
+                    <pre>
+                        <code>
+                            const saludar = () => {
+                                console.log("Hola Mundo!")
+                            }
+                        </code>
+                    </pre>
                 </blockquote>
-            </article>
-        </section>
+            </section>
 
-        <!-- Semántica a Nivel de Línea (o Texto) -->
-        <section>
-            <h2>Formatos de Texto</h2>
+            <!-- Multimedia -->
+            <section>
+                <h2>Galería Multimedia</h2>    
+            
+                <h3>Imagen Responsiva</h3>
+                <picture>
+                    <source media="(min-width: 800px)" srcset="./assets/img/ejemplo.jpg">
+                    <img src="./assets/img/ejemplo2.jpg" alt="Imagen de ejemplo">
+                </picture>
 
-            <article>
-                <p><strong><u>Atención:</u></strong> El evento comienza pronto.</p>
+                <h3>Video Nativo</h3>
+                <video controls width="400">
+                    <source src="./assets/video/Kilómetro Cero.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
 
-                <p>No te quedes <em>afuera</em>.</p>
+                <h3>Audio</h3>
+                <audio controls>
+                    <source src="./assets/audio/Enciende tu Voz.mp3" type="audio/mp3">
+                </audio>
 
-                <p>El <span>resultado</span> de búsqueda para: <mark>HTML5</mark></p>
+                <h3>Mapa</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?..."
+                    width="400" height="300"
+                    loading="lazy"
+                ></iframe>
+            </section>
 
-                <p>La clase es el <time datetime="2025-11-20 09:00">20 de Noviembre a las 09:00</time></p>
+            <!-- Tablas de Datos -->
+            <section>
+                <h2>Reporte de Ventas</h2>
 
-                <p><small>Sujeto a términos y condiciones.</small></p>
-            </article>
+                <table border="1">
 
-            <blockquote>
-                <pre>
-                    <code>
-                        const saludar = () => {
-                            console.log("Hola Mundo!")
-                        }
-                    </code>
-                </pre>
-            </blockquote>
-        </section>
+                    <caption>Ventas anuales por sucursal - 2025</caption>
 
-        <!-- Multimedia -->
-        <section>
-            <h2>Galería Multimedia</h2>    
-        
-            <h3>Imagen Responsiva</h3>
-            <picture>
-                <source media="(min-width: 800px)" srcset="./assets/img/ejemplo.jpg">
-                <img src="./assets/img/ejemplo2.jpg" alt="Imagen de ejemplo">
-            </picture>
+                    <thead>
+                        <tr>
+                            <th scope="col">Sucursal</th>
+                            <th scope="col">Producto A</th>
+                            <th scope="col">Producto B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Zona Norte</th>
+                            <td>$500</td>
+                            <td>$300</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Zona Sur</th>
+                            <td>$200</td>
+                            <td>$100</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Totales</th>
+                            <td>$700</td>
+                            <td>$400</td>
+                        </tr>
+                    </tfoot>
 
-            <h3>Video Nativo</h3>
-            <video controls width="400">
-                <source src="./assets/video/Kilómetro Cero.mp4" type="video/mp4">
-                Tu navegador no soporta videos.
-            </video>
+                </table>
+            </section>
 
-            <h3>Audio</h3>
-            <audio controls>
-                <source src="./assets/audio/Enciende tu Voz.mp3" type="audio/mp3">
-            </audio>
+            <!-- Formularios -->
+            <section id="seccion-form">
+                <header>
+                    <h2>Registro de Usuario</h2>
+                </header>
 
-            <h3>Mapa</h3>
-            <iframe 
-                src="https://www.google.com/maps/embed?..."
-                width="400" height="300"
-                loading="lazy"
-            ></iframe>
-        </section>
+                <form action="/registro" method="POST">
 
-        <!-- Tablas de Datos -->
-        <section>
-            <h2>Reporte de Ventas</h2>
+                    <fieldset>
+                        <legend>Datos Personales</legend>
 
-            <table border="1">
+                        <div>
+                            <label for="nombre">Nombre Completo:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                        </div>
 
-                <caption>Ventas anuales por sucursal - 2025</caption>
+                        <div>
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Sucursal</th>
-                        <th scope="col">Producto A</th>
-                        <th scope="col">Producto B</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Zona Norte</th>
-                        <td>$500</td>
-                        <td>$300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Zona Sur</th>
-                        <td>$200</td>
-                        <td>$100</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Totales</th>
-                        <td>$700</td>
-                        <td>$400</td>
-                    </tr>
-                </tfoot>
+                        <div>
+                            <label for="navegador">Navegador Favorito:</label>
+                            <input list="navegadores" id="navegador" name="navegador">
 
-            </table>
-        </section>
+                            <datalist id="navegadores">
+                                <option value="Chrome">
+                                <option value="Firefox">
+                                <option value="Safari">
+                                <option value="Edge">
+                            </datalist>
+                        </div>
+                    </fieldset>
 
-        <!-- Formularios -->
-        <section>
-            <h2>Registro de Usuario</h2>
+                    <fieldset>
+                        <legend>Configuración</legend>
 
-            <form action="/registro" method="POST">
+                        <div>
+                            <label for="fecha">Fecha de Nacimiento:</label>
+                            <input type="date" id="fecha" name="fecha">
+                        </div>
 
-                <fieldset>
-                    <legend>Datos Personales</legend>
+                        <div>
+                            <label>Perfil completado:</label>
+                            <progress value="70" max="100">70%</progress>
+                        </div>
 
-                    <div>
-                        <label for="nombre">Nombre Completo:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
-                    </div>
+                        <div>
+                            <label>Nivel de seguridad:</label>
+                            <meter value="0.6" min="0" max="1" low="0.3" high="0.7" optimum="0.5"></meter>
+                        </div>
+                    </fieldset>
 
-                    <div>
-                        <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                    <button type="submit">
+                        Registrarme ahora
+                    </button>
 
-                    <div>
-                        <label for="navegador">Navegador Favorito:</label>
-                        <input list="navegadores" id="navegador" name="navegador">
-
-                        <datalist id="navegadores">
-                            <option value="Chrome">
-                            <option value="Firefox">
-                            <option value="Safari">
-                            <option value="Edge">
-                        </datalist>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Configuración</legend>
-
-                    <div>
-                        <label for="fecha">Fecha de Nacimiento:</label>
-                        <input type="date" id="fecha" name="fecha">
-                    </div>
-
-                    <div>
-                        <label>Perfil completado:</label>
-                        <progress value="70" max="100">70%</progress>
-                    </div>
-
-                    <div>
-                        <label>Nivel de seguridad:</label>
-                        <meter value="0.6" min="0" max="1" low="0.3" high="0.7" optimum="0.5"></meter>
-                    </div>
-                </fieldset>
-
-                <button type="submit">
-                    Registrarme ahora
-                </button>
-
-            </form>
-        </section>
+                </form>
+            </section>
+        </div>
 
         <aside>
             <h3>Publicidad</h3>

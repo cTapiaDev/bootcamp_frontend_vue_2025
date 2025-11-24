@@ -6,6 +6,7 @@
     --primary: #3659b9;
     --accent: #24cb93;
     --danger: #ef4444;
+    --border: #334155;
 
     --radius: 8px;
 }
@@ -33,15 +34,20 @@ body > footer {
 
 main {
     display: flex;
+    gap: 1rem;
+}
+
+main > div {
+    display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-section {
+section, aside {
     background-color: var(--bg-card);
     padding: 1.5rem;
     border-radius: var(--radius);
-    border: 1px solid #334155;
+    border: 1px solid var(--border);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -157,7 +163,7 @@ th, td {
 
 tbody th, 
 tbody td {
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid var(--border);
 }
 
 th {
@@ -176,3 +182,77 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: rgba(59, 131, 246, 0.1);
 }
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+fieldset {
+    border-color: var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    padding: 0 0.5rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+input, button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    border: 1px solid #475569;
+    background-color: #1e293b;
+    color: white;
+    margin-top: 0.3rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+button[type="submit"] {
+    background-color: var(--primary);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #244397;
+}
+
+progress, meter {
+    width: 100%;
+    height: 1.5rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+}
+
+#seccion-form header {
+    display: flex;
+    justify-content: center;
+}
+

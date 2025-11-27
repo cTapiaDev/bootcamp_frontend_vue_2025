@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 4px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dark-mode {
+    background-color: rgb(21, 21, 21);
+    color: #fff;
+}

@@ -3,3 +3,23 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.hero-img {
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(76, 2, 141, 0.7));
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.hover-effect {
+    transition: all 0.3s;
+}
+
+.hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2) !important;
+}

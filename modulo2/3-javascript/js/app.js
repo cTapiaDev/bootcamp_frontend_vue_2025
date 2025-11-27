@@ -58,5 +58,7 @@ const body = document.body;
 console.log(body);
 
 btnTema.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+    body.classList.toggle('dark-mode'); // Evalúa si existe; Si existe: Lo quita, Si no existe: Lo agrega.
+    // classList.add -> Sirve para agregar clases de css
+    // classList.remove -> Sirve para remover clases de css
 });

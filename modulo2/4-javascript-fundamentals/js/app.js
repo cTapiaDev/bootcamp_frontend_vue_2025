@@ -101,3 +101,51 @@ switch (codigoRegion) {
 }
 
 console.log(`Tiempo estimado: ${diasEntrega}`);
+
+
+// === Funciones ===
+// function calcularPrecioFinal(precioNeto) {
+// }
+
+const calcularPrecioFinal = (precioNeto) => {
+    const iva = precioNeto * impuesto;
+    const total = precioNeto + iva;
+    return total;
+};
+
+const precioMonitor = calcularPrecioFinal(300);
+const precioTeclado = calcularPrecioFinal(50);
+
+console.log(`Precios con IVA incluido: Monitor $${precioMonitor}, Teclado $${precioTeclado}`);
+
+// --- Lógica de descuentos ---
+const aplicarDescuento = (totalCompra, tipoCliente = "REGULAR") => {
+    let totalConDescuento = totalCompra;
+
+    if (tipoCliente === "VIP") {
+        // 20% de descuento
+        totalConDescuento = totalCompra * 0.8;
+        console.log("Descuento VIP aplicado (20%)");
+    } else if (tipoCliente === "NUEVO") {
+        // se le van a regalar $10
+        totalConDescuento = totalCompra - 10;
+        console.log("Bono de bienvenida aplicado ($10)");
+    } else {
+        console.log("Sin descuentos aplicables");
+    }
+
+    return totalConDescuento;
+}
+
+let carritoTotal = 1000;
+let tipoUsuario = "VIP";
+
+let totalConImpuestos = calcularPrecioFinal(carritoTotal);
+let totalPagar = aplicarDescuento(totalConImpuestos, tipoUsuario);
+
+console.log(`
+    Monto Neto: $${carritoTotal}
+    Total con Impuestos: $${totalConImpuestos}
+    --------------------------
+    TOTAL A PAGAR: $${totalPagar}
+`);

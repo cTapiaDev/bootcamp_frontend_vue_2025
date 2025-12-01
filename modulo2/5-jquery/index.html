@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 - JQuery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+
+    <main>
+        <section class="container mt-5">
+            <h1 class="text-center mb-4">Control de Bodega</h1>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <h4 class="card-header bg-primary text-white">Nuevo Producto</h4>
+                        <div class="card-body">
+                            <form id="form-inventario">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre del Producto</label>
+                                    <input type="text" id="txt-nombre" class="form-control" placeholder="Ej: Taladro Percutor" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cantidad (stock)</label>
+                                    <input type="number" id="txt-stock" class="form-control" placeholder="0" />
+                                </div>
+                                <div class="d-grid">
+                                    <button type="button" id="btn-agregar" class="btn btn-success">
+                                        + Agregar a Bodega
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Stock</th>
+                                        <th>Estado</th>
+                                        <th class="text-end">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabla-body">
+                                    <!-- Aquí recibe HTML desde jQuery/JS -->
+                                </tbody>
+                            </table>
+                            <p id="mensaje-vacio" class="text-center mt-3 text-muted">
+                                No hay productos en bodega
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>

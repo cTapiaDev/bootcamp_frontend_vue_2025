@@ -1,6 +1,9 @@
 $(document).ready(function() {
     console.log("¡Hola mundo desde jQuery!");
 
+    // ----- ESTE ES UN COMENTARIO PARA GIT -----
+
+
     // ==== Esto es JS Vanilla (Puro) ====
     // const btnAgregar = document.querySelector('#btn-agregar');
     // btnAgregar.addEventListener('click', () => {

@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'go3v2';
+    src: url('../assets/fonts/go3v2.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: beige;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f5f2;
+    position: sticky;
+    top: 0;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'go3v2'; */
+    font-size: 30px;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    color: #7c736a;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+
+/* Section Hero */
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/img/hero-fashion.jpg');
+}

@@ -13,19 +13,29 @@ body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    background-color: beige;
+    background-color: #f9f8f6;
     font-family: 'Inter', sans-serif;
     position: relative;
 }
 
-header {
+.header {
+    height: 80px;
+    background-color: #f7f5f2;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.header .container {
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f7f5f2;
-    position: sticky;
-    top: 0;
+}
+
+section {
+    position: relative;
+    padding: 128px 0;
 }
 
 h1 {
@@ -33,6 +43,20 @@ h1 {
     /* font-family: 'go3v2'; */
     font-size: 30px;
     font-weight: 600;
+}
+
+h2 {
+    font-size: 72px;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 0.9;
+    margin-bottom: 8px;
+}
+
+h3 {
+    font-size: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 0.9;
+    margin-top: 16px;
 }
 
 nav ul {
@@ -51,10 +75,95 @@ ul li a {
     letter-spacing: 2px;
 }
 
+.container {
+    max-width: 1400px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+}
+
 
 /* Section Hero */
 .hero {
     width: 100vw;
     height: 100vh;
     background: url('../assets/img/hero-fashion.jpg');
+    background-size: cover;
+    background-position: top;
+    padding: 0;
 }
+
+.hero-gradient {
+    position: absolute;
+    background: linear-gradient(70deg, #f4f2ea 50%, #c4ac88 70%, transparent);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.top-title {
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #7c736a;
+    text-transform: uppercase;
+    letter-spacing: 3.6px;
+}
+
+.subtitle {
+    max-width: 448px;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #7c736a;
+    line-height: 28px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 17px;
+    margin-top: 16px;
+}
+
+.btn {
+    height: 48px;
+    padding: 12px 36px;
+    border: 1px solid #1c1a17;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-explorer {
+    background: #1c1a17;
+    color: #F9F8F6;
+}
+
+.btn-view:hover {
+    background: #1c1a17;
+    color: #F9F8F6;
+}
+
+/* Section Category */
+.category header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section Featured */
+.featured {
+    background-color: #f4f3f0;
+}
+

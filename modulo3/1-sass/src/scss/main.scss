@@ -3,7 +3,10 @@
 
 @import 'base/reset';
 
-.pricing-header {
+@import 'components/buttons';
+@import 'components/card';
+
+.header {
     text-align: center;
 
     &__title {

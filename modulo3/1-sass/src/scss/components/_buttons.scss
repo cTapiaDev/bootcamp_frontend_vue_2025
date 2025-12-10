@@ -1,0 +1,29 @@
+.btn {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+
+    &--outline {
+        background-color: transparent;
+        border-color: $color-primary;
+        color: $color-primary;
+
+        &:hover {
+            background-color: $color-primary;
+            color: #fff;
+        }
+    }
+
+    &--primary {
+        background-color: $color-primary;
+        color: #fff;
+
+        &:hover {
+            background-color: darken($color-primary, 10%);
+        }
+    }
+}

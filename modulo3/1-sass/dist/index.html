@@ -7,14 +7,58 @@
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="pricing-container">
+<body class="container">
 
-    <header class="pricing-header">
-        <h1 class="pricing-header__title">Nuestros planes</h1>
-        <p class="pricing-header__subtitle">Elige la potencia que necesitas para tu proyecto</p>
+    <!-- B.E.M -->
+    <!-- Bloque, Elemento, Modificador -->
+    <!-- .header__title-principal -->
+    <!-- .header__subtitle-alert -->
+
+    <header class="header">
+        <h1 class="header__title">Nuestros planes</h1>
+        <p class="header__subtitle">Elige la potencia que necesitas para tu proyecto</p>
     </header>
 
-    <main></main>
+
+    <!-- Bloque--Modificador -->
+    <!-- .card--basic -->
+    <main>
+        <div class="cards-grid">
+            <article class="card card--basic">
+                <h2 class="card__title">Básico</h2>
+                <p class="card__price">$19<span>/mes</span></p>
+                <ul class="card__features">
+                    <li>1 Usuario</li>
+                    <li>5GB Almacenamiento</li>
+                    <li>Soporte Email</li>
+                </ul>
+                <button class="btn btn--outline">Empezar</button>
+            </article>
+
+            <article class="card card--pro">
+                <div class="card__badge">Recomendado</div>
+                <h2 class="card__title">Profesional</h2>
+                <p class="card__price">$49<span>/mes</span></p>
+                <ul class="card__features">
+                    <li>5 Usuario</li>
+                    <li>50GB Almacenamiento</li>
+                    <li>Soporte 24/7</li>
+                </ul>
+                <button class="btn btn--primary">Obtener Pro</button>
+            </article>
+
+            <article class="card card--enterprise">
+                <h2 class="card__title">Empresa</h2>
+                <p class="card__price">$99<span>/mes</span></p>
+                <ul class="card__features">
+                    <li>Usuarios Ilimitados</li>
+                    <li>1TB Almacenamiento</li>
+                    <li>Agente Dedicado</li>
+                </ul>
+                <button class="btn btn--outline">Contactar</button>
+            </article>
+        </div>
+    </main>
     
 </body>
 </html>

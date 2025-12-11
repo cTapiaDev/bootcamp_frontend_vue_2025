@@ -1,0 +1,28 @@
+// Fuentes
+$font-body: 'Inter', sans-serif;
+$font-heading: 'Space Grotesk', sans-serif;
+
+// Paleta de Colores
+$colors: (
+    "bg": #030014,
+    "surface": #0f0c29,
+    "primary": #7000ff,
+    "secondary": #00d4ff,
+    "text": #fff,
+    "text-muted": #94a3b8,
+    "success": #10b981
+);
+
+// Gestión de Capas
+$z-layers: (
+    "base": 1,
+    "nav": 100,
+    "modal": 200
+);
+
+// Breakpoints
+$breakpoints: (
+    "md": 768px,
+    "lg": 1024px
+);
+

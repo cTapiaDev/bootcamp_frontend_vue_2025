@@ -9,10 +9,24 @@
     font-weight: 600;
     cursor: pointer;
     border: none;
+    transition: all 0.3s ease;
 
     &--primary {
         background: map.get($colors, "primary");
         color: map.get($colors, "text");
+
+        &.btn--glow:hover {
+            box-shadow: 0 0 20px rgba(map.get($colors, 'primary'), 0.6);
+        }
+    }
+
+    &--glass {
+        @include glass;
+        color: white;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
     }
 
     &--lg {

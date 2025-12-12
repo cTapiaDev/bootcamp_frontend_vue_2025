@@ -1,0 +1,88 @@
+@use "sass:map";
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+
+    &__bg-glow {
+        position: absolute;
+        top: -20%;
+        right: 0;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(map.get($colors, 'primary'), 0.4) 0%, transparent 70%);
+        z-index: map.get($z-layers, 'glow');
+        filter: blur(80px);
+    }
+
+    &__container {
+        display: grid;
+        gap: 3rem;
+
+        @include mq('md') {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        font-family: $font-heading;
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+
+        @include mq('md') {
+            font-size: 4.5rem;
+        }
+
+        .text-gradient {
+            @include text-gradient;
+        }
+    }
+
+    &__text {
+        color: map.get($colors, 'text-muted');
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 500px;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+    }
+
+    &__stats {
+        display: flex;
+        gap: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+
+    @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.2}s;
+        }
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

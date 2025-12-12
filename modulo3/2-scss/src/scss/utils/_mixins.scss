@@ -5,4 +5,19 @@
     @media (min-width: map.get($breakpoints, $size)) {
         @content
     }
+};
+
+// Efecto Cristal
+@mixin glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+// Efecto Gradiente (Texto)
+@mixin text-gradient {
+    background: linear-gradient(90deg, map.get($colors, 'secondary'), map.get($colors, 'primary'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

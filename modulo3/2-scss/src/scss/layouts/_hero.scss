@@ -64,6 +64,14 @@
         padding-top: 2rem;
         margin-bottom: 15px;
     }
+
+    &__visual {
+        margin-bottom: 2rem;
+
+        @include mq('md') {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .fade-in {

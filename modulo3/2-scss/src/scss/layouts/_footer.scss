@@ -1,0 +1,32 @@
+@use "sass:map";
+
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5rem 0;
+
+    &__container {
+        display: grid;
+        gap: 2rem;
+
+        @include mq('md') {
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+
+    &__link {
+        width: fit-content;
+        display: block;
+        color: map.get($colors, 'text-muted');
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        transition: all 0.3s;
+
+        &:hover {
+            color: map.get($colors, 'secondary');
+        }
+    }
+}

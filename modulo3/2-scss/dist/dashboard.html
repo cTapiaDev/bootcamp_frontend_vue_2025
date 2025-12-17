@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXO | Dashboard</title>
+    <link rel="stylesheet" href="../src/scss/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap">
+</head>
+<body class="dashboard">
+
+    <aside class="sidebar">
+        <header class="sidebar__header">
+            <a href="#" class="sidebar__logo">NEXO<span class="dot">.</span></a>
+        </header>
+
+        <nav class="sidebar__nav">
+            <ul class="sidebar__menu">
+                <li>
+                    <a href="#" class="sidebar__link sidebar__link--is-active">
+                        <i class="fa-solid fa-border-all sidebar__icon"></i> Resumen
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar__link">
+                        <i class="fa-solid fa-wallet sidebar__icon"></i> Billetera
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="sidebar__link">
+                        <i class="fa-solid fa-chart-pie sidebar__icon"></i> Reportes
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar__spacer"></div>
+
+            <a href="index.html" class="sidebar__link sidebar__link--logout">
+                <i class="fa-solid fa-right-from-bracket sidebar__icon"></i> Salir
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="dashboard-header__title">Hola, Alex</h1>
+                <p class="dashboard-header__subtitle">Aquí está el resumen de tus finanzas</p>
+            </div>
+            <div class="dashboard-header__avatar">
+                AD
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <article class="stat-card">
+                <h3 class="stat-card__title">Balance Total</h3>
+                <div class="stat-card__value">$124,300</div>
+                <div class="stat-card__trend">+12% vs mes anterior</div>
+            </article>
+
+            <article class="stat-card">
+                <h3 class="stat-card__title">Ingresos (Mes)</h3>
+                <div class="stat-card__value">+$4,234</div>
+            </article>
+
+            <article class="stat-card">
+                <h3 class="stat-card__title">Gastos</h3>
+                <div class="stat-card__value">-$3,100</div>
+            </article>
+        </div>
+
+        <section class="activity">
+            <h3 class="activity__title">Actividad Reciente</h3>
+
+            <div class="activity-container">
+                <table class="activity-table">
+                    <thead>
+                        <tr>
+                            <th class="activity-table__th">Transacción</th>
+                            <th class="activity-table__th">Fecha</th>
+                            <th class="activity-table__th">Monto</th>
+                            <th class="activity-table__th">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="activity-table__td">
+                                <div class="activity-table__item">
+                                    <i class="fa-brands fa-spotify"></i>
+                                    Spotify Premium
+                                </div>
+                            </td>
+                            <td class="activity-table__td">Hace 2 hrs</td>
+                            <td class="activity-table__td">-$12.99</td>
+                            <td class="activity-table__td">Completado</td>
+                        </tr>
+
+                        <tr>
+                            <td class="activity-table__td">
+                                <div class="activity-table__item">
+                                    <i class="fa-solid fa-money-bill-transfer"></i>
+                                    Transferencia Recibida
+                                </div>
+                            </td>
+                            <td class="activity-table__td">Ayer</td>
+                            <td class="activity-table__td">+$450.00</td>
+                            <td class="activity-table__td">Completado</td>
+                        </tr>
+
+                        <tr>
+                            <td class="activity-table__td">
+                                <div class="activity-table__item">
+                                    <i class="fa-brands fa-apple"></i>
+                                    Apple TV
+                                </div>
+                            </td>
+                            <td class="activity-table__td">Nov 24</td>
+                            <td class="activity-table__td">-$15.00</td>
+                            <td class="activity-table__td">Pendiente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+    </main>
+   
+    <script src="https://kit.fontawesome.com/b0ed111d1e.js" crossorigin="anonymous"></script>
+</body>
+</html>

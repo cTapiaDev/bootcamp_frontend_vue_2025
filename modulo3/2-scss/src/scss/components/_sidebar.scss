@@ -1,0 +1,68 @@
+@use "sass:map";
+
+.sidebar {
+    width: 260px;
+    background-color: map.get($colors, 'surface');
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100vh;
+    position: fixed;
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    z-index: map.get($z-layers, 'nav');
+    display: none;
+
+    @include mq('md') {
+        display: flex;
+    }
+
+    &__header {
+        margin-bottom: 3rem;
+    }
+
+    &__logo {
+        font-family: $font-heading;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        .dot {
+            color: map.get($colors, 'secondary');
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.8rem 1rem;
+        color: map.get($colors, 'text-muted');
+        border-radius: 12px;
+        transition: all 0.3s;
+
+        &:hover, &--is-active {
+            background: rgba(map.get($colors, 'primary'), 0.1);
+            color: map.get($colors, 'text');
+        }
+
+        &--logout {
+            margin-top: auto;
+            color: map.get($colors, 'danger');
+
+            &:hover {
+                background: rgba(map.get($colors, 'danger'), 0.1);
+            }
+        }
+    }
+
+    &__spacer {
+        height: 3px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 100%;
+    }
+}

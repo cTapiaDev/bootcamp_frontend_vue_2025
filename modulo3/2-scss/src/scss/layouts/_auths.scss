@@ -8,6 +8,7 @@
     background-color: map.get($colors, 'bg');
     position: relative;
     overflow: hidden;
+    padding: 1rem;
 
     &::before {
         content: '';
@@ -24,11 +25,66 @@
 
 .auth-card {
     @include glass;
-    padding: 3rem;
+    padding: 1.5rem;
     border-radius: 24px;
     width: 100%;
     max-width: 420px;
     text-align: center;
     position: relative;
     z-index: map.get($z-layers, 'base');
+
+    @include mq('lg') {
+        padding: 3rem;
+    }
+
+    &__title {
+        font-family: $font-heading;
+        font-size: 2rem;
+
+        .dot {
+            color: map.get($colors, 'success');
+        }
+    }
+
+    &__subtitle {
+        color: map.get($colors, 'text-muted');
+        margin-bottom: 2rem;
+    }
+
+    &__link {
+        color: map.get($colors, 'text-muted'); 
+        font-size: 0.9rem;
+    }
+}
+
+.auth-form {
+    margin-bottom: 1.5rem;
+
+    &__group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: map.get($colors, 'text-muted');
+        font-size: 0.9rem;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: map.get($colors, 'text');
+        transition: 0.3s;
+
+        &:focus {
+            outline: none;
+            border-color: map.get($colors, 'primary');
+            box-shadow: 0 0 0 2px rgba(map.get($colors, 'primary'), 0.2);
+        }
+    }
 }

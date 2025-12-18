@@ -1,7 +1,5 @@
-@use "sass:map";
-
 .marquee {
-    background: map.get($colors, 'surface');
+    background: color('surface');
     padding: 2rem 0;
     overflow: hidden;
     white-space: nowrap;

@@ -1,11 +1,9 @@
-@use "sass:map";
-
 .auth-container {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: map.get($colors, 'bg');
+    background-color: color('bg');
     position: relative;
     overflow: hidden;
     padding: 1rem;
@@ -17,9 +15,9 @@
         right: 0;
         width: 600px;
         height: 600px;
-        background: radial-gradient(circle, rgba(map.get($colors, 'primary'), 0.4) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(color('primary'), 0.4) 0%, transparent 70%);
         filter: blur(80px);
-        z-index: map.get($z-layers, 'glow');
+        z-index: zlayer('glow');
     }
 }
 
@@ -31,7 +29,7 @@
     max-width: 420px;
     text-align: center;
     position: relative;
-    z-index: map.get($z-layers, 'base');
+    z-index: zlayer('base');
 
     @include mq('lg') {
         padding: 3rem;
@@ -42,17 +40,17 @@
         font-size: 2rem;
 
         .dot {
-            color: map.get($colors, 'success');
+            color: color('success');
         }
     }
 
     &__subtitle {
-        color: map.get($colors, 'text-muted');
+        color: color('text-muted');
         margin-bottom: 2rem;
     }
 
     &__link {
-        color: map.get($colors, 'text-muted'); 
+        color: color('text-muted'); 
         font-size: 0.9rem;
     }
 }
@@ -68,7 +66,7 @@
     &__label {
         display: block;
         margin-bottom: 0.5rem;
-        color: map.get($colors, 'text-muted');
+        color: color('text-muted');
         font-size: 0.9rem;
     }
 
@@ -76,15 +74,15 @@
         width: 100%;
         padding: 1rem;
         background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid bgopacity(0.1);
         border-radius: 12px;
-        color: map.get($colors, 'text');
+        color: color('text');
         transition: 0.3s;
 
         &:focus {
             outline: none;
-            border-color: map.get($colors, 'primary');
-            box-shadow: 0 0 0 2px rgba(map.get($colors, 'primary'), 0.2);
+            border-color: color('primary');
+            box-shadow: 0 0 0 2px rgba(color('primary'), 0.2);
         }
     }
 }

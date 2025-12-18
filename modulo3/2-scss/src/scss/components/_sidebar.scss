@@ -1,14 +1,12 @@
-@use "sass:map";
-
 .sidebar {
     width: 260px;
-    background-color: map.get($colors, 'surface');
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: color('surface');
+    border-right: 1px solid bgopacity(0.1);
     height: 100vh;
     position: fixed;
     padding: 2rem 1.5rem;
     flex-direction: column;
-    z-index: map.get($z-layers, 'nav');
+    z-index: zlayer('nav');
     display: none;
 
     @include mq('md') {
@@ -25,7 +23,7 @@
         font-size: 1.5rem;
 
         .dot {
-            color: map.get($colors, 'secondary');
+            color: color('secondary');
         }
     }
 
@@ -41,28 +39,28 @@
         align-items: center;
         gap: 10px;
         padding: 0.8rem 1rem;
-        color: map.get($colors, 'text-muted');
+        color: color('text-muted');
         border-radius: 12px;
         transition: all 0.3s;
 
         &:hover, &--is-active {
-            background: rgba(map.get($colors, 'primary'), 0.1);
-            color: map.get($colors, 'text');
+            background: rgba(color('primary'), 0.1);
+            color: color('text');
         }
 
         &--logout {
             margin-top: auto;
-            color: map.get($colors, 'danger');
+            color: color('danger');
 
             &:hover {
-                background: rgba(map.get($colors, 'danger'), 0.1);
+                background: rgba(color('danger'), 0.1);
             }
         }
     }
 
     &__spacer {
         height: 3px;
-        background: rgba(255, 255, 255, 0.1);
+        background: bgopacity(0.1);
         border-radius: 100%;
     }
 }

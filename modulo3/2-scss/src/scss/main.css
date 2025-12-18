@@ -51,7 +51,7 @@ ul {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+  color: #fff;
 }
 .btn--glass:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -184,6 +184,7 @@ ul {
 .activity-table__th {
   padding: 1.2rem 1.5rem;
   background: rgba(0, 0, 0, 0.2);
+  color: #94a3b8;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -288,7 +289,7 @@ ul {
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, rgba(112, 0, 255, 0.4) 0%, transparent 70%);
-  z-index: 0;
+  z-index: zlayear("glow");
   filter: blur(80px);
 }
 .hero__container {
@@ -390,7 +391,7 @@ ul {
 .floating-card__header {
   display: flex;
   justify-content: space-between;
-  color: #94a3b8;
+  color: mcolor("text-muted");
   margin-bottom: 1rem;
 }
 .floating-card__amount {

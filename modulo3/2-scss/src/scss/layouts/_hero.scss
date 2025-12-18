@@ -1,5 +1,3 @@
-@use "sass:map";
-
 .hero {
     min-height: 100vh;
     display: flex;
@@ -13,8 +11,8 @@
         right: 0;
         width: 600px;
         height: 600px;
-        background: radial-gradient(circle, rgba(map.get($colors, 'primary'), 0.4) 0%, transparent 70%);
-        z-index: map.get($z-layers, 'glow');
+        background: radial-gradient(circle, rgba(color('primary'), 0.4) 0%, transparent 70%);
+        z-index: zlayear('glow');
         filter: blur(80px);
     }
 
@@ -44,7 +42,7 @@
     }
 
     &__text {
-        color: map.get($colors, 'text-muted');
+        color: color('text-muted');
         font-size: 1.1rem;
         margin-bottom: 2rem;
         max-width: 500px;
@@ -60,7 +58,7 @@
     &__stats {
         display: flex;
         gap: 3rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid bgopacity(0.1);
         padding-top: 2rem;
         margin-bottom: 15px;
     }
@@ -108,7 +106,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
-        color: map.get($colors, 'text-muted');
+        color: mcolor('text-muted');
         margin-bottom: 1rem;
     }
 
@@ -121,7 +119,7 @@
 
     &__graph {
         height: 60px;
-        background: linear-gradient(90deg, transparent, rgba(map.get($colors, 'secondary'), 0.4));
+        background: linear-gradient(90deg, transparent, rgba(color('secondary'), 0.4));
         border-radius: 8px;
         border-bottom-right-radius: 0px;
         position: relative;
@@ -133,7 +131,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(map.get($colors, 'secondary'), 0.8));
+            background: linear-gradient(90deg, transparent, rgba(color('secondary'), 0.8));
         }
     }
 }

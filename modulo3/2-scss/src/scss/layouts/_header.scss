@@ -1,14 +1,12 @@
-@use "sass:map";
-
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: map.get($z-layers, "nav");
+    z-index: zlayer('nav');
     padding: 1rem 0;
-    background: rgba(map.get($colors, 'bg'), 0.8);
+    background: rgba(color('bg'), 0.8);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid bgopacity(0.05);
 
     &__content {
         display: flex;
@@ -22,7 +20,7 @@
         font-weight: 700;
 
         .dot {
-            color: map.get($colors, 'secondary');
+            color: color('secondary');
         }
     }
 
@@ -45,12 +43,12 @@
         left: 0;
         width: 100%;
         height: 0;
-        background: map.get($colors, 'bg');
+        background: color('bg');
         padding: 0;
         text-align: center;
         overflow: hidden;
         transition: all 0.4s ease-out;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid bgopacity(0.1);
         z-index: 0;
 
         &.is-active {
@@ -74,6 +72,6 @@
     }
 
     &__link:hover {
-         color: map.get($colors, 'secondary');
+         color: color('secondary');
     }
 }

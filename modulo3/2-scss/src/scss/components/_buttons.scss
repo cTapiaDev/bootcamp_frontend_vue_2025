@@ -1,5 +1,3 @@
-@use "sass:map";
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -12,20 +10,20 @@
     transition: all 0.3s ease;
 
     &--primary {
-        background: map.get($colors, "primary");
-        color: map.get($colors, "text");
+        background: color('primary');
+        color: color('text');
 
         &.btn--glow:hover {
-            box-shadow: 0 0 20px rgba(map.get($colors, 'primary'), 0.6);
+            box-shadow: 0 0 20px rgba(color('primary'), 0.6);
         }
     }
 
     &--glass {
         @include glass;
-        color: white;
+        color: color('text');
 
         &:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: bgopacity(0.1);
         }
     }
 
@@ -41,12 +39,12 @@
 }
 
 .badge {
-    background: rgba(map.get($colors, "secondary"), 0.1);
-    color: map.get($colors, "secondary");
+    background: rgba(color('secondary'), 0.1);
+    color: color('secondary');
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
-    border: 1px solid rgba(map.get($colors, "secondary"), 0.3);
+    border: 1px solid rgba(color('secondary'), 0.3);
     margin-bottom: 1rem;
 }

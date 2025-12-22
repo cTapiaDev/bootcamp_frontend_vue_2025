@@ -3,17 +3,15 @@
 }
 
 .navbar-scrolled {
-    background-color: rgba(33, 37, 41, 0.95) !important;
+    background-color: rgba(33, 37, 41, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .letter-spacing-2 {
     letter-spacing: 2px;
 }
 
-.text-area {
-    height: 100px !important;
+.form-control.text-area {
+    height: 100px;
 }

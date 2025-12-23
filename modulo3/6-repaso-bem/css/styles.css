@@ -1,0 +1,133 @@
+:root {
+    --bg-color: #f8f9fa;
+    --text-primary: #212529;
+    --card-bg: #ffffff;
+    --primary: #3b82f6;
+    --spacing: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+    max-width: 800px;
+    align-items: center;
+}
+
+/* BLOQUES */
+.user-card {
+    background-color: var(--card-bg);
+    border: 1px solid gray;
+    border-radius: 12px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: 1px solid #caced5;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ELEMENTOS */
+.user-card__header {
+    background-color: #dce7f5;
+    padding: var(--spacing);
+    display: flex;
+    justify-content: center;
+}
+
+.user-card__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid var(--card-bg);
+    object-fit: cover;
+}
+
+.user-card__body {
+    padding: var(--spacing);
+    text-align: center;
+}
+
+.user-card__name {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.user-card__role {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+}
+
+/* MODIFICADORES */
+.user-card--dark {
+    --card-bg: #1f2937;
+    --text-primary: #f9fafb;
+}
+
+.user-card--dark .user-card__header {
+    background-color: #111827;
+}
+
+.user-card--dark .user-card__role {
+    color: #9ca3af;
+}
+
+.user-card--compact {
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-card--compact .user-card__header {
+    background-color: transparent;
+    padding-right: 0;
+}
+
+.user-card--compact .user-card__body {
+    text-align: left;
+    padding-left: var(--spacing);
+}
+
+.user-card--compact .user-card__avatar {
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
+}
+
+.btn--primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.btn--outlined {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}

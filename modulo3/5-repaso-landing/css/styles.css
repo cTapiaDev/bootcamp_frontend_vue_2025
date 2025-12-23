@@ -246,5 +246,48 @@ ul {
         display: block;
         position: static;
         width: auto;
+        background: transparent;
+        border: none;
+    }
+
+    .nav-list {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+
+    .nav-list li a {
+        padding: 0;
+        border: none;
+        position: relative;
+    }
+
+    .nav-list li a::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: 0.3s;
+    }
+
+    .nav-list li a:hover::after {
+        width: 100%;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+
+    .card:last-child {
+        transform: translateX(0);
+    }
+
+    .card-featured {
+        transform: scale(1.1);
+    }
+
+    .pricing {
+        margin-bottom: var(--spacing-lg);
     }
 }

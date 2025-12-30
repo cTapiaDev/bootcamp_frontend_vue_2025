@@ -31,6 +31,9 @@ const producto = 'Iphone 15';
 const precio = 850;
 const moneda = "USD";
 
+// String + String : Texto
+// Number + Number : Suma
+// String + Number : Texto
 console.log("El " + producto + " cuesta " + precio + " " + moneda); // Forma antigua de escribir variables en texto
 
 const mensaje = `Oferta del día: El ${producto} tiene un valor de ${precio} ${moneda}`;

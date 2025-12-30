@@ -11,8 +11,8 @@ console.log(`Saldo tras pagar Netflix: $${saldo}`);
 
 // Comparación Estricta (Siempre responde con un booleano)
 // = : Asignación (Guarda esto aquí).
-// == : Compración débil (¿Se parecen?).
-// === : Compración fuerte (¿Son idénticos en valor y tipo?).
+// == : Comparación débil (¿Se parecen?).
+// === : Comparación fuerte (¿Son idénticos en valor y tipo?).
 
 const numero = 7;
 const intentos = "7";

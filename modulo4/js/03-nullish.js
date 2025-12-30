@@ -3,8 +3,8 @@
 // null
 // undefined
 
-const nombreUsuariDB = null;
+const nombreUsuarioDB = null;
 
-const nombreMostrar = nombreUsuariDB ?? "Invitado";
+const nombreMostrar = nombreUsuarioDB ?? "Invitado";
 
 console.log(`Bienvenido, ${nombreMostrar}`);

@@ -81,3 +81,22 @@ console.log(mensajeModerno);
 // - 1. Si tiene menos de 18 años, no entra.
 // - 2. Si tiene 18 o más, entra.
 // - 3. Si entra y tiene "Ticket VIP", va la zona VIP, si no, a zona general.
+
+const edadUsuario = 20;
+const tieneTicketVIP = false;
+
+if (edadUsuario < 18) {
+    console.log('Acceso denegado: Eres menor de edad');
+} else {
+    console.log('¡Bienvenido!');
+
+    // if (tieneTicketVIP) {
+    //     console.log('Puedes ingresar a la Zona VIP');
+    // } else {
+    //     console.log('Puedes ingresar a la Zona General');
+    // }
+
+    const zonaAsignada = tieneTicketVIP ? 'Zona VIP' : 'Zona General';
+    console.log(`Puedes ingresar a la ${zonaAsignada}`);
+
+}

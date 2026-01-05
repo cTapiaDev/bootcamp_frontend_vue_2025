@@ -81,3 +81,11 @@ console.log(texto);
 // --- Ejercicio ---
 // Realizar una función que pueda calcular el área de un rectángulo, para saber cuánta pintura comprar.
 // base * altura - idealmente usar un return para devolver el dato.
+
+const areaPintar = (altoCentimetros = 0, anchoCentimetros = 0) => {
+    const areaM2 = (altoCentimetros * anchoCentimetros) / 10000;
+    return `El área a pintar es de ${areaM2} metros cuadrados (m²).`;
+}
+
+const total2 = areaPintar(100, 50);
+console.log(total2);

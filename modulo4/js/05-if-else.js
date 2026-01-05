@@ -32,7 +32,7 @@ if (true) {
 // --- ELSE IF ---
 // - Lógica anidada - Múltiples opciones
 
-const temperatura = 5;
+const temperatura = 25;
 
 if (temperatura > 30) {
     console.log('¡Hace mucho calor!');
@@ -50,7 +50,7 @@ const saldoCliente = 500;
 const precioProducto = 400;
 const hayStock = false;
 
-if ((saldoCliente >= precioProducto) && hayStock) {
+if ((saldoCliente >= precioProducto) && hayStock) { // (true) && false = false
     console.log('Compra realizada con éxito!');
 } else {
     console.log('No se puede realizar la compra.');
@@ -71,7 +71,7 @@ if (edad >= 18) {
 }
 
 // - Refactorizar a operador ternario
-const mensajeModerno = edad >= 18 ? 'Es adulto' : 'Es niño';
+const mensajeModerno = (edad >= 18) ? 'Es adulto' : 'Es niño';
 
 console.log(mensajeModerno);
 

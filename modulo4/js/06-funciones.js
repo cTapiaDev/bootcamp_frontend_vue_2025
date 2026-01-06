@@ -35,7 +35,9 @@ const saludarUsuario = (nombreUsuario) => {
     console.log(`Hola ${nombreUsuario}, es un gusto tenerte de vuelta`);
 };
 
-saludarUsuario("Fernanda");
+let nombre = "Fernanda";
+
+saludarUsuario(nombre);
 saludarUsuario("Camila");
 
 
@@ -89,3 +91,22 @@ const areaPintar = (altoCentimetros = 0, anchoCentimetros = 0) => {
 
 const total2 = areaPintar(100, 50);
 console.log(total2);
+
+
+// --- Return implicito ---
+const duplicar = (numero) => {
+    return numero * 2;
+}
+
+const duplicarPro = (numero) => numero * 2;
+
+console.log(duplicar(10));
+console.log(duplicarPro(10));
+
+
+// --- Ejercicio 2 ---
+// Crea una función "ataque" que reciba el tipo de ataque y el daño.
+// 1. Si el ataque es "Fuego", el daño se multiplica por 2.
+// 2. Si es "Agua", el daño es normal
+// 3. Cualquier otro tipo de ataque, tiene daño 1.
+// 4. Retornar un string con el reporte de daños.

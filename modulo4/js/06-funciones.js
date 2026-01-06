@@ -110,3 +110,42 @@ console.log(duplicarPro(10));
 // 2. Si es "Agua", el daño es normal
 // 3. Cualquier otro tipo de ataque, tiene daño 1.
 // 4. Retornar un string con el reporte de daños.
+
+const ataque = (tipodeataque, daño ) => {
+
+    if (tipodeataque == 'Fuego') {
+        daño *= 2;
+    } else if (tipodeataque == 'Agua') {
+        daño
+    } else {
+        daño = 1;
+    }
+
+    return `Ataque de tipo ${tipodeataque}, causa ${daño} puntos de daño!!!`;
+}
+
+console.log(ataque ('Fuego', 4))
+console.log(ataque ('Agua', 4))
+console.log(ataque ('Aire', 4))
+
+// ---
+
+const ataque2 = (tipoAtaque, danoAtaque) => {
+
+    switch (tipoAtaque) {
+        case "fuego":
+        case "Fuego":
+            danoAtaque *= 2;
+            break;
+        case "agua":
+        case "Agua":
+            danoAtaque;
+            break;
+        default:
+            danoAtaque = 1;
+        }
+    console.log(`Ataque: ${tipoAtaque} // Daño: ${danoAtaque}`)
+    return danoAtaque;
+}
+
+let accionAtaque = ataque2("fuego", 15);

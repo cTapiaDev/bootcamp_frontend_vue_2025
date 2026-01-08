@@ -83,3 +83,19 @@ console.log(pares);
 // --- Ejercicio ---
 // Crear una función que reciba un texto y nos diga cuántas vocales tiene.
 // Tip: Podemos recorrer las caracteres un String, con for...of
+
+const contarVocales = (texto) => {
+    let contador = 0;
+    const vocales = "aeiouáéíóúäëïöü";
+    const textoMin = texto.toLowerCase();
+
+    for (const letra of textoMin) {
+        if (vocales.includes(letra)) {
+            contador++;
+        }
+    }
+
+    return contador;
+}
+
+console.log(contarVocales("Murciélago"));

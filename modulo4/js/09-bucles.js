@@ -11,6 +11,7 @@ console.log("¡Despegue!");
 
 // --- Simular una lanzada de dados ---
 const tirarDado = () => Math.floor(Math.random() * 6) + 1;
+// Math.random -> 0.0 - 0.9
 
 let dado = tirarDado();
 
@@ -19,7 +20,6 @@ while (dado !== 6) {
     dado = tirarDado();
 }
 console.log("¡Por fin salió un 6!");
-
 
 
 // --- For ---

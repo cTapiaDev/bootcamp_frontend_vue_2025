@@ -111,3 +111,31 @@ console.log(nuevoUsuario);
 // 1. Una lista de productos (Array de objetos con nombre y precio).
 // 2. Un método agregarProductos(nombre, precio).
 // 3. Un método calcularTotal() (podrían utilizar un forEach para la suma).
+
+const carrito = {
+    productos: [],
+
+    agregarProductos(nombre, precio) {
+        const nuevoProducto = { nombre, precio };
+        this.productos.push(nuevoProducto);
+        console.log(`${nombre} agregado al carrito`);
+    },
+
+    calcularTotal() {
+        let total = 0;
+
+        for (const prod of this.productos) {
+            total += prod.precio;
+        }
+
+        return total;
+    }    
+};
+
+carrito.agregarProductos("Zapatillas", 100);
+carrito.agregarProductos("Calcetines", 10);
+
+console.log(carrito);
+
+const totalPagar = carrito.calcularTotal();
+console.log(`Total a pagar: $${totalPagar}`);

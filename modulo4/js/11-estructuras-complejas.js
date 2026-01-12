@@ -90,7 +90,26 @@ const estadoInicial = {
 
 // 1. Función de Login
 // Recibe el estado actual y devuelve uno nuevo con el usuario cambiado.
+const loguearUsuario = (estado, nuevoUsuario) => {
+    return {
+        ...estado,
+        usuario: nuevoUsuario
+    };
+};
 
+const estado2 = loguearUsuario(estadoInicial, 'Administrador');
+console.log(estado2);
 
 
 // 2. Función para agregar al carrito.
+const agregarItem = (estado, item) => {
+    return {
+        ...estado,
+        carrito: [...estado.carrito, item]
+    };
+};
+
+const estado3 = agregarItem(estado2, "Monitor 4K-Oled");
+console.log(estado3);
+const estado4 = agregarItem(estado3, "Teclado Redragon");
+console.log(estado4);

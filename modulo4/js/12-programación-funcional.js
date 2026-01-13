@@ -94,13 +94,20 @@ console.log(productosOferta);
 // 3. Utiliza .join("") para unir todo en un solo gran string.
 
 const canciones = [
-    { titulo: "", artista: "", views: 1000 },
-    { titulo: "", artista: "", views: 1000 },
-    { titulo: "", artista: "", views: 1000 },
+    { titulo: "Runaway", artista: "Kanye West", views: 1200 },
+    { titulo: "Bye Bye Bye", artista: "NSYNC", views: 1000 },
+    { titulo: "Right Now", artista: "Akon", views: 1300 },
 ];
 
-`<div class="card">
-    <h3>titulo</h3>
-    <p>artista</p>
-    <small>views</small>
-</div>`
+const cardHTML = canciones.map( cancion => {
+    return `
+    <div class="card">
+        <h3>${cancion.titulo}</h3>
+        <p>${cancion.artista}</p>
+        <small>${cancion.views}</small>
+    </div>`
+});
+
+const htmlFinal = cardHTML.join("");
+
+console.log(htmlFinal);

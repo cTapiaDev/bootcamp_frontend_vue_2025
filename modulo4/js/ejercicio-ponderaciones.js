@@ -8,6 +8,7 @@ const dataAlumnos = [];
 
 const form = document.querySelector('#studentForm');
 const tableBody = document.querySelector('#gradesTable tbody');
+const avgDisplay = document.querySelector('#courseAvg');
 
 
 // Función para promedio
@@ -18,6 +19,7 @@ const calculateAvg = (n1, n2, n3) => {
 
 const updateTable = () => {
     tableBody.innerHTML = '';
+    let totalSum = 0;
 
     dataAlumnos.forEach((estudiante, i) => {
         const row = document.createElement('tr');
@@ -30,8 +32,12 @@ const updateTable = () => {
             <td><strong>${estudiante.average}</strong></td>
         `
         tableBody.appendChild(row);
+
+        totalSum += estudiante.average;
     });
 
+    const courseAvg = dataAlumnos.length > 0 ? (totalSum / dataAlumnos.length) : 0;
+    avgDisplay.textContent = courseAvg.toFixed(2);
 };
 
 
@@ -59,8 +65,8 @@ const handleAddStudent = (event) => {
     dataAlumnos.push(nuevoAlumno);
     updateTable();
 
-    form.reset();
-    nombreEstudiante.focus();
+    form.reset(); // Nos sirve para limpiar los datos de formulario
+    nombreEstudiante.focus(); // Es para que el input vuelva a estar disponible luego del reset.
 };
 
 form.addEventListener('submit', handleAddStudent);

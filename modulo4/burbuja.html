@@ -13,16 +13,28 @@
             <h1>Ordenamiento Burbuja</h1>
             <p class="mb-20">Ingresa los números para analizar:</p>
 
-            <form class="form-group">
-                <input type="number" id="num1" placeholder="Número 1" class="form-input">
-                <input type="number" id="num2" placeholder="Número 2" class="form-input">
-                <input type="number" id="num3" placeholder="Número 3" class="form-input">
+            <form id="form-group" class="input-list">
+                <input type="number" placeholder="Ingresa un número" class="form-input">
+                <!-- <input type="number" id="num2" placeholder="Número 2" class="form-input">
+                <input type="number" id="num3" placeholder="Número 3" class="form-input"> -->
             </form>
 
-            <button type="submit" id="btn-calcular" class="btn">Analizar</button>
+            <div class="acciones-secundarias">
+                <button id="btn-agregar" class="btn-icon" title="Agregar otro número">+ Agregar Número</button>
+            </div>
+
+            <div class="controles">
+                <label for="selector-orden">Ordenar por:</label>
+                <select id="selector-orden" class="form-select">
+                    <option value="asc">Menor a Mayor</option>
+                    <option value="desc">Mayor a Menor</option>
+                </select>
+            </div>
+
+            <button type="submit" id="btn-calcular" class="btn">Ordenar y Analizar</button>
 
             <div id="resultado" class="resultado-box hidden">
-
+                <!-- Esto viene del JS -->
             </div>
         </section>
     </main>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número</title>
+    <link rel="stylesheet" href="./css/styles-azar.css">
+</head>
+<body>
+
+    <main>
+        <section class="card">
+            <h1>Adivina el Número</h1>
+            <p class="mb-20">Tienes <strong id="intentos">3</strong> intentos.</p>
+
+            <form>
+                <input type="number" id="input-numero" placeholder="Del 1 al 10" min="1" max="10" />
+            </form>
+
+            <div class="acciones">
+                <button id="btn-adivinar" class="btn-jugar">Probar suerte</button>
+                <button id="btn-reiniciar" class="btn-reiniciar oculto">Jugar otra vez</button>
+            </div>
+
+            <p id="feedback" class="mensaje"></p>
+            <div id="historial-lista" class="historial"></div>
+        </section>
+    </main>
+    
+    <script src="./js/ejercicio-azar.js"></script>
+</body>
+</html>

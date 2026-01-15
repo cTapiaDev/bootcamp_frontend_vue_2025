@@ -36,18 +36,55 @@ body {
     text-align: center;
 }
 
-.form-group {
+.input-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.acciones-secundarias {
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: 20px;
 }
 
-.form-input {
+.btn-icon {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+    cursor: pointer;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    transition: all 0.4s;
+}
+
+.btn-icon:hover {
+    opacity: 1;
+    letter-spacing: 0.2px;
+}
+
+.form-input, .form-select {
     padding: 0.75rem;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 1rem;
+    width: 100%;
+}
+
+.controles {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.controles label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    letter-spacing: 1.1px;
 }
 
 .btn {
@@ -76,6 +113,7 @@ body {
     border-radius: 6px;
     text-align: left;
     border-left: 4px solid var(--primary-color);
+    /* word-break: break-all; */
 }
 
 .hidden {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship</title>
+    <link rel="stylesheet" href="./css/styles-battleship.css">
+</head>
+<body>
+
+    <header>
+        <h1>Battleship <span>v1.0</span></h1>
+    </header>
+
+    <main class="main-layout">
+        <section class="game-area">
+            <div class="board-container">
+                <div class="stats">
+                    <span>TU FLOTA</span>
+                    <span id="player-ships-count" class="stat-value">0/5</span>
+                </div>
+                <div id="player-board" class="board"></div>
+            </div>
+
+            <div class="board-container">
+                <div class="stats">
+                    <span>ENEMIGO</span>
+                    <span id="cpu-ships-count" class="stat-value">0/5</span>
+                </div>
+                <div id="cpu-board" class="board"></div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <section class="control-panel">
+                <div id="status-text" class="status-text">
+                    Fase de planificación: <br> Coloca 5 barcos en tu tablero.
+                </div>
+                <button id="btn-action" class="btn btn-action">INICIAR BATALLA</button>
+                <button id="btn-restart" class="btn btn-restart">REINICIAR JUEGO</button>
+            </section>
+
+            <section id="combat-log" class="combat-log">
+                <div class="log-entry log-sys">Sistema iniciando...</div>
+                <div class="log-entry log-sys">Esperando el despliegue de la flota...</div>
+            </section>
+        </aside>
+
+    </main>
+    
+    <script src="./js/battleship.js"></script>
+</body>
+</html>

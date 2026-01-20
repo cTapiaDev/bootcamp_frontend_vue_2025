@@ -130,3 +130,129 @@ console.log(admin.deleteAccount());
 const usuario = new Usuario("Usuario3", "usuario3@gmail.com");
 console.log(usuario.login());
 
+
+// Polimorfismo
+// Nos permite modificar el comportamiento o la estructura que tiene el Padre, sin afectarlo.
+class UserPremium extends Usuario {
+
+    constructor(username, email) {
+        super(username, email)
+    }
+
+    login() {
+        return `${super.login()} (Bienvenido Usuario VIP)`;
+    }
+}
+
+const vip = new UserPremium("Elon", "elon@starlink.com");
+console.log(vip.login());
+
+
+// ------
+// Métodos estáticos (Static)
+// Son métodos de clases, no de objetos.
+class IDGenerator {
+    static getNewID() {
+        return Math.floor(Math.random() * 10000);
+    }
+}
+
+console.log(IDGenerator.getNewID());
+
+
+
+
+// --- Ejercicio Integrador ---
+class Product { // Clase Padre o Base
+    #stock;
+
+    constructor(name, price, initialStock) {
+        this.name = name;
+        this.price = price;
+        this.#stock = initialStock;
+    }
+
+    // Getter
+    get stockInfo() {
+        return this.#stock > 0 ? `Disponible (${this.#stock})` : 'Agotado';
+    }
+
+    sell(quantity) {
+        if (quantity <= 0) {
+            return {
+                success: false,
+                msg: 'Debes ingresar un stock valido'
+            }
+        }
+        
+
+        if (this.#stock >= quantity) {
+            this.#stock -= quantity;
+            return { 
+                success: true,
+                total: this.price * quantity
+            };
+        }
+
+
+        return {
+            success: false,
+            msg: 'Stock insuficiente'
+        };
+    }
+}
+
+// Clases Hijas o Subclases
+class PhysicalProduct extends Product {
+
+    constructor(name, price, stock, weight) {
+        super(name, price, stock);
+        this.weight = weight;
+    }
+
+    // Calcular el precio de envío (Polimorfismo)
+    calculateTotal(quantity) {
+        const sale = this.sell(quantity);
+
+        if (sale.success) {
+            const shipping = this.weight * 5;
+            return `Total: $${sale.total + shipping} (Incluye $${shipping} envio)`;
+        }
+
+        return `Error: ${sale.msg}`
+    }
+}
+
+
+class DigitalProduct extends Product {
+
+    constructor(name, price, stock, downloadLink) {
+        super(name, price, stock);
+        this.downloadLink = downloadLink;
+    }
+
+    sell(quantity) {
+        const sale = super.sell(quantity);
+        
+        if (sale.success) {
+            return `Compra exitosa. Total: $${sale.total}. Descarga aquí: ${this.downloadLink}`;
+        }
+
+        return 'Error en la compra.';
+    }
+}
+
+const laptop = new PhysicalProduct("MacBook Pro", 2000, 5, 2);
+console.log(laptop.calculateTotal(-3));
+
+const ebook = new DigitalProduct("Aprende JS", 30, 100, "https://librosprogramacion.com/pdf?js");
+console.log(ebook.sell(4));
+
+
+
+// Resumen -->
+// Clase: El plano.
+// Objeto: La casa construida en base al plano.
+// #: Significa que es privado.
+// extends: Herencia.
+// super: Llama a papá.

@@ -99,7 +99,7 @@ function* fibonacciGenerator() {
 
 const fibo = fibonacciGenerator();
 
-for (let i = 0; i < 5000; i++) {
+for (let i = 0; i < 10; i++) {
     console.log(fibo.next().value);
 }
 
@@ -118,3 +118,35 @@ const logsServidor = [
     { ip: "192.168.1.3", url: "/home", timestamp: "10:03" },
     { ip: "192.168.1.2", url: "/productos", timestamp: "10:04" },
 ];
+
+class LogAnalyzer {
+    constructor(logs) {
+        this.logs = logs;
+    }
+
+    contarUsuariosUnicos() {
+        const allIps = this.logs.map(log => log.ip);
+        const ipsUnicas = new Set(allIps);
+        return ipsUnicas.size;
+    }
+
+    generarMapaTrafico() {
+        const trafficMap = new Map();
+
+        for (const log of this.logs) {
+            const visitas = trafficMap.get(log.url) ?? 0;
+            trafficMap.set(log.url, visitas + 1);
+        }
+
+        return trafficMap;
+    }
+
+}
+
+
+const analista = new LogAnalyzer(logsServidor);
+
+console.log(`Usuarios únicos: ${analista.contarUsuariosUnicos()}`);
+
+const mapa = analista.generarMapaTrafico();
+console.log([...mapa]);

@@ -130,6 +130,9 @@ class LogAnalyzer {
         return ipsUnicas.size;
     }
 
+
+
+
     generarMapaTrafico() {
         const trafficMap = new Map();
 
@@ -141,6 +144,23 @@ class LogAnalyzer {
         return trafficMap;
     }
 
+
+
+    obtenerPaginaTop() {
+        const trafficMap = this.generarMapaTrafico(); // /home: 3, /contacto: 1, /productos: 1
+        let maxVisitas = 0;
+        let urlGanadora = '';
+
+        for (const [url, visitas] of trafficMap) {
+            if (visitas > maxVisitas) {
+                maxVisitas = visitas;
+                urlGanadora = url;
+            }
+        }
+
+        return { url: urlGanadora, visitas: maxVisitas };
+    }
+
 }
 
 
@@ -150,3 +170,6 @@ console.log(`Usuarios únicos: ${analista.contarUsuariosUnicos()}`);
 
 const mapa = analista.generarMapaTrafico();
 console.log([...mapa]);
+
+const topPage = analista.obtenerPaginaTop();
+console.log(`Página más visitada: ${topPage.url} con ${topPage.visitas} visitas.`);

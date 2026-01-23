@@ -71,4 +71,24 @@ const iniciales = nombre
         return acc + palabra[0].toUpperCase();
     }, "");
 
-console.log(iniciales);
+console.log(iniciales); // CDJA
+
+// Agrupación de categorías
+const movimientos = [
+    { tipo: 'ingreso', monto: 500 },
+    { tipo: 'gasto', monto: 100 },
+    { tipo: 'gasto', monto: 50 },
+    { tipo: 'ingreso', monto: 200 },
+];
+
+const resumen = movimientos.reduce((acc, mov) => {
+    if (mov.tipo === 'ingreso') {
+        acc.ingresos += mov.monto;
+    } else {
+        acc.gastos += mov.monto;
+    }
+
+    return acc;
+}, { ingresos: 0, gastos: 0 });
+
+console.log(resumen);

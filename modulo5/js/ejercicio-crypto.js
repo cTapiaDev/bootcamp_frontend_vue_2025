@@ -48,6 +48,6 @@ const renderCards = (listaMonedas) => {
     });
 }
 
-btnRefresh.addEventListener('click', getCryptos);
+btnRefresh.addEventListener('click', getCryptos());
 
 getCryptos();

@@ -5,14 +5,14 @@ const getCryptos = async () => {
 
     try {
 
-        const respuesta = await fetch('https://api.coinlore.net/api/ticker/');
+        const respuesta = await fetch('https://api.coinlore.net/api/tickers/');
 
         if (!respuesta.ok) {
             throw new Error('No se pudo conectar con el servidor');
         }
 
         const data = await respuesta.json();
-        // const monedas = data.data.slice(0, 10);
+        const monedas = data.data.slice(0, 10);
 
         renderCards(data.data);
         

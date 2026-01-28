@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <link rel="stylesheet" href="./css/dom.css">
+</head>
+<body>
+
+    <main>
+        <section>
+            <h1>Tienda Eficiente</h1>
+            <button id="btn-cargar">Cargar Productos</button>
+
+            <ul id="lista-productos"></ul>
+        </section>
+        
+        <section id="contenedor-tareas">
+            <h3>Mis Tareas</h3>
+            <ul id="lista-tareas">
+                <li>
+                   Aprender JS
+                   <button class="btn-delete" data-id="1">🗑️</button> 
+                </li>
+                <li>
+                   Estudiar Vue.js
+                   <button class="btn-delete" data-id="2">🗑️</button> 
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <div id="app"></div>
+        </section>
+
+
+        <section>
+            <button id="btn-theme">Cambiar Tema</button>
+        </section>
+
+        <section>
+            <h3>Agenda</h3>
+            <form id="agenda-form">
+                <input type="text" id="nombre" placeholder="Nombre" required />
+                <input type="text" id="telefono" placeholder="Teléfono" required />
+                <button type="submit">Guardar</button>
+            </form>
+
+            <ul id="lista-contactos"></ul>
+        </section>
+
+
+
+
+    </main>
+    
+    <script src="./js/07-DOM.js"></script>
+</body>
+</html>

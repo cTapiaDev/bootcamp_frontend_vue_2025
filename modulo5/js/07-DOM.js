@@ -32,7 +32,7 @@ listaTareas.addEventListener('click', (e) => {
 
     if (boton) {
         const id = boton.dataset.id;
-        const texto = boton.parentElement.firstChild.textContent.trim();
+        // const texto = boton.parentElement.firstChild.textContent.trim();
 
         // if (confirm(`¿Borrar tarea: ${texto}?`)) {
         //     boton.closest('li').remove();

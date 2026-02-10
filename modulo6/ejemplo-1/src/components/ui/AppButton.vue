@@ -8,11 +8,11 @@
     })
 
     const buttonClasses = computed(() => {
-        const base = "px-6 py-3 font-bold"
+        const base = "px-6 py-3 font-bold transition-all duration-300 cursor-pointer active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed rounded-sm"
 
         const styles = {
-            primary: "bg-primary text-white shadow-lg",
-            outline: "border-2 border-primary text-primary"
+            primary: "bg-primary text-white hover:bg-primary-dark shadow-lg shadow-primary/20",
+            outline: "border-2 border-primary text-primary hover:bg-primary/5"
         }
 
         return `${base} ${styles[props.variant]}`

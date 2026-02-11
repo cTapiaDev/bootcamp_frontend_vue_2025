@@ -1,9 +1,9 @@
 <script setup>
-  import { RouterView } from 'vue-router';
+    import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="antialiased text-slate-900">
-    <RouterView />
-  </div>
+    <div class="antialiased text-slate-900 max-w-7xl mx-auto p-10">
+        <RouterView />
+    </div>
 </template>

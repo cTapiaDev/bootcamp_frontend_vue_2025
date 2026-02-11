@@ -17,6 +17,6 @@ export const useCounter = (maxStock = 10) => {
         isFull,
         available,
         increment,
-        reset
+        reset,
     }
 }

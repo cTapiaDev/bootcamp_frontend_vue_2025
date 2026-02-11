@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { ref } from 'vue'
 
 export const useCourses = () => {
     const courses = ref([
@@ -8,5 +8,13 @@ export const useCourses = () => {
         { id: 4, title: 'AI for Devs', price: 99, tags: ['AI', 'Prompting'], stock: 3 },
     ])
 
-    return { courses }
+    const addCourse = (newCourse) => {
+        courses.value.push({
+            ...newCourse,
+            id: Date.now(),
+            tags: newCourse.tags.split(',').map((tag) => tag.trim()),
+        })
+    }
+
+    return { courses, addCourse }
 }

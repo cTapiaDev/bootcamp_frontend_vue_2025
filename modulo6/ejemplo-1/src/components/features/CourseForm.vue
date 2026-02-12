@@ -37,11 +37,8 @@
         </h2>
 
         <AppInput v-model="form.title" label="Título del curso" placeholder="Ej: Master en SRE" />
-
         <AppInput v-model.number="form.price" type="number" label="Precio (USD)" />
-
         <AppInput v-model.number="form.stock" type="number" label="Stock Inicial" />
-
         <AppInput v-model="form.tags" label="Etiquetas" placeholder="Vue, JS, 2026" />
 
         <AppButton label="Guardar Curso" class="w-full" :disabled="isInvalid" />

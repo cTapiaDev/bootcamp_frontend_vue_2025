@@ -35,7 +35,9 @@
         </h3>
 
         <div class="flex justify-between items-center">
-            <span class="text-2xl font-black text-slate-900">${{ course.price }}</span>
+            <span class="text-2xl font-black text-slate-900">{{
+                course.price > 0 ? `$${course.price}` : 'GRATIS'
+            }}</span>
 
             <!-- <span v-if="course.stock > 0" class="text-xxs font-bold text-emerald-500 uppercase">
                 {{ course.stock }} cupos

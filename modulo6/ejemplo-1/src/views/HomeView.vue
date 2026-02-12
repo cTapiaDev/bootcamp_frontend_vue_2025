@@ -7,12 +7,19 @@
     import CourseCard from '@/components/ui/CourseCard.vue'
 
     // const { count, isFull, available, increment, reset } = useCounter(8)
-    const { courses, addCourse } = useCourses()
+    const { courses, addCourse, fetchCourses } = useCourses()
     const isFormVisible = ref(false)
+
+    console.log(fetchCourses())
 
     const handleSaveCourse = (data) => {
         addCourse(data)
         isFormVisible.value = false
+    }
+
+    // Cuando el proyecto está listo para ser entregado (Paso a producción), los console.log se deben borrar antes de hacerlo.
+    const handleSelect = (course) => {
+        console.log(`Curso seleccionado: ${course.title}`)
     }
 </script>
 
@@ -31,13 +38,24 @@
     </header>
 
     <main class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-        <article v-if="isFormVisible" class="lg:sticky lg:top-20">
-            <CourseForm @save="handleSaveCourse" />
-        </article>
+        <transition
+            enter-active-class="transition duration-400 ease-out"
+            enter-from-class="transform -translate-x-10 opacity-0"
+            enter-to-class="transform translate-x-0 opacity-100"
+        >
+            <article v-if="isFormVisible" class="lg:sticky lg:top-20">
+                <CourseForm @save="handleSaveCourse" />
+            </article>
+        </transition>
 
         <section :class="[isFormVisible ? 'lg:col-span-2' : 'lg:col-span-3']">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <CourseCard v-for="course in courses" :key="course.id" :course="course" />
+                <CourseCard
+                    v-for="course in courses"
+                    :key="course.id"
+                    :course="course"
+                    @select="handleSelect"
+                />
             </div>
         </section>
     </main>

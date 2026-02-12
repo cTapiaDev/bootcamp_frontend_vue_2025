@@ -7,14 +7,19 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+    plugins: [vue(), vueDevTools(), tailwindcss()],
+    resolve: {
+        alias: {
+            '@': fileURLToPath(new URL('./src', import.meta.url)),
+        },
     },
-  },
+    server: {
+        proxy: {
+            '/api-ms': {
+                target: 'https://learn.microsoft.com/api',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api-ms/, ''),
+            },
+        },
+    },
 })

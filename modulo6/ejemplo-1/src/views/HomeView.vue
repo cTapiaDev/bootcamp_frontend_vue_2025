@@ -1,16 +1,26 @@
 <script setup>
-    import { ref } from 'vue'
+    import { ref, onMounted } from 'vue'
     import AppButton from '@/components/ui/AppButton.vue'
+    import AppStatus from '@/components/ui/AppStatus.vue'
     // import { useCounter } from '@/composables/useCounter'
     import { useCourses } from '@/composables/useCourses'
     import CourseForm from '@/components/features/CourseForm.vue'
     import CourseCard from '@/components/ui/CourseCard.vue'
+    import SearchBar from '@/components/ui/SearchBar.vue'
+    import LevelSelector from '@/components/ui/LevelSelector.vue'
 
     // const { count, isFull, available, increment, reset } = useCounter(8)
-    const { courses, addCourse, fetchCourses } = useCourses()
+    const {
+        addCourse,
+        fetchCourses,
+        loading,
+        error,
+        searchQuery,
+        uniqueLevels,
+        activeLevel,
+        filteredCourses,
+    } = useCourses()
     const isFormVisible = ref(false)
-
-    console.log(fetchCourses())
 
     const handleSaveCourse = (data) => {
         addCourse(data)
@@ -21,6 +31,10 @@
     const handleSelect = (course) => {
         console.log(`Curso seleccionado: ${course.title}`)
     }
+
+    onMounted(() => {
+        fetchCourses()
+    })
 </script>
 
 <template>
@@ -30,6 +44,16 @@
             <p class="text-slate-500 mt-2">Gestiona el catálogo de Cursos.</p>
         </div>
 
+        <div>
+            <SearchBar v-model="searchQuery" />
+
+            <LevelSelector
+                v-if="uniqueLevels.length"
+                v-model="activeLevel"
+                :levels="uniqueLevels"
+            />
+        </div>
+
         <AppButton
             :label="isFormVisible ? 'Cancelar' : 'Nuevo Curso'"
             @click="isFormVisible = !isFormVisible"
@@ -37,7 +61,15 @@
         />
     </header>
 
-    <main class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+    <div v-if="loading" class="py-20">
+        <AppStatus type="loading" message="Conectando con Microsoft Learn..." />
+    </div>
+
+    <div v-else-if="error" class="py-20 flex justify-center">
+        <AppStatus type="error" :message="error" @retry="fetchCourses" />
+    </div>
+
+    <main v-else class="grid grid-cols-1 lg:grid-cols-1 gap-12 items-start">
         <transition
             enter-active-class="transition duration-400 ease-out"
             enter-from-class="transform -translate-x-10 opacity-0"
@@ -48,16 +80,18 @@
             </article>
         </transition>
 
-        <section :class="[isFormVisible ? 'lg:col-span-2' : 'lg:col-span-3']">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <CourseCard
-                    v-for="course in courses"
-                    :key="course.id"
-                    :course="course"
-                    @select="handleSelect"
-                />
-            </div>
-        </section>
+        <div v-if="filteredCourses.length != 0">
+            <section :class="[isFormVisible ? 'lg:col-span-2' : 'lg:col-span-3']">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <CourseCard
+                        v-for="course in filteredCourses"
+                        :key="course.id"
+                        :course="course"
+                        @select="handleSelect"
+                    />
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- <main class="min-h-screen flex flex-col items-center justify-center p-6">

@@ -1,10 +1,14 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import api from '@/api/microsoftClient'
+import { useDebounceRef } from './useDebounce'
+
+const courses = ref([])
+const loading = ref(false)
+const error = ref(null)
 
 export const useCourses = () => {
-    const courses = ref([])
-    const loading = ref(false)
-    const error = ref(null)
+    const searchQuery = useDebounceRef('')
+    const activeLevel = ref('')
 
     const adaptToCourse = (msModule) => {
         return {
@@ -15,7 +19,8 @@ export const useCourses = () => {
                 : 0,
             tags: msModule.levels || ['General'],
             stock: 50,
-            image: msModule.icon_url,
+            icon: msModule.icon_url,
+            image: msModule.social_image_url,
             summary: msModule.summary,
         }
     }
@@ -26,8 +31,8 @@ export const useCourses = () => {
 
         try {
             const { data } = await api.get('/catalog')
-            const rawModules = data.modules.slice(0, 24)
-            courses.value = rawModules.map(adaptToCourse)
+            const rawModules = data.modules.slice(0, 100)
+            courses.value = data.modules.map(adaptToCourse)
         } catch (err) {
             console.error(err)
             error.value = 'Error al conectarse con Microsoft Learn'
@@ -36,11 +41,33 @@ export const useCourses = () => {
         }
     }
 
+    const filteredCourses = computed(() => {
+        return courses.value.filter((course) => {
+            const matchesSearch = course.title
+                .toLowerCase()
+                .includes(searchQuery.value.toLowerCase())
+
+            const matchesLevel = activeLevel.value ? course.tags.includes(activeLevel.value) : true
+
+            return matchesSearch && matchesLevel
+        })
+    })
+
+    const uniqueLevels = computed(() => {
+        const levels = new Set()
+        courses.value.forEach((c) => c.tags.forEach((tag) => levels.add(tag)))
+        return Array.from(levels)
+    })
+
     return {
         courses,
         loading,
         error,
         fetchCourses,
+        filteredCourses,
+        searchQuery,
+        activeLevel,
+        uniqueLevels,
     }
 }
 

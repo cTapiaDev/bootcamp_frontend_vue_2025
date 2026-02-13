@@ -20,14 +20,22 @@
         @click="goToDetail"
         class="group bg-white p-3 rounded-xl border border-slate-200 transition-all hover:-translate-y-2 shadow-sm hover:shadow-xl cursor-pointer"
     >
-        <div class="flex gap-2 mb-4">
-            <span
-                v-for="tag in course.tags"
-                :key="tag.id"
-                class="text-xxs font-bold px-2 py-1 bg-slate-100 rounded-md text-slate-500 uppercase"
-            >
-                {{ tag }}
-            </span>
+        <div class="flex justify-between items-start mb-4">
+            <img
+                v-if="course.icon"
+                :src="course.icon"
+                alt="Icono del curso"
+                class="w-12 h-12 object-contain"
+            />
+            <div class="flex gap-2">
+                <span
+                    v-for="tag in course.tags"
+                    :key="tag.id"
+                    class="text-xxs font-bold px-2 py-1 bg-slate-100 rounded-md text-slate-500 uppercase"
+                >
+                    {{ tag }}
+                </span>
+            </div>
         </div>
 
         <h3 class="text-xl font-bold text-slate-800 mb-8 group-hover:text-balance">
